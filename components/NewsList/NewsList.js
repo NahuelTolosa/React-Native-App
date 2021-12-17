@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import { StyleSheet, FlatList, Text, SegmentedControlIOSComponent } from "react-native";
 import  NewsListItem  from "../NewsListItem/NewsListItem";
-import { Icon } from "react-native-elements";
 
 import { DATABASE } from "../../data/database";
 
 
-const NewsList = ({ navigation }) => {
+const NewsList = () => {
 
     const [list, setList] = useState(DATABASE);
 
-    const handlePress = () => {
-        navigation.navigate('AddNew');
-    }
+    // const handlePress = () => {
+    //     navigation.navigate('AddNew');
+    // }
 
 
     const getIndexOnDataBase = id => {
@@ -62,15 +61,6 @@ const NewsList = ({ navigation }) => {
 
                 //Key
                 keyExtractor={(item) => item.id}
-            />
-
-            <Icon
-                type='material-community'
-                name='plus'
-                color='#bbb'
-                reverse
-                containerStyle={listStyles.add}
-                onPress={handlePress}
             />
 
         </>
